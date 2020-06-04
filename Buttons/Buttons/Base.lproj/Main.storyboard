@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,98 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Buttons" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uK-dp-VWz">
+                                <rect key="frame" x="143.5" y="430" width="127" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="State Selected"/>
+                                <connections>
+                                    <action selector="stateSelectedBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7S8-HZ-Y6P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eM8-4n-rGY">
+                                <rect key="frame" x="144.5" y="364" width="125" height="36"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <state key="normal" title="Default Button"/>
+                                <connections>
+                                    <action selector="defaultBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nEb-yn-7Fq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppm-YJ-5Dk">
+                                <rect key="frame" x="143.5" y="496" width="127" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="State Disabled"/>
+                                <connections>
+                                    <action selector="stateDisabledBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OkD-bk-8Oa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiN-vh-w5T">
+                                <rect key="frame" x="131.5" y="562" width="151" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="State Highlighted"/>
+                                <connections>
+                                    <action selector="stateHighlightedBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWQ-IC-Urh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A50-MO-W1T">
+                                <rect key="frame" x="140.5" y="766" width="133" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="LDN-LH-AUN"/>
+                                    <constraint firstAttribute="width" secondItem="A50-MO-W1T" secondAttribute="height" multiplier="4:3" id="uxm-Iq-vow"/>
+                                </constraints>
+                                <state key="normal" title="Image Button" image="pushbtn">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkE-ZK-BOi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buttons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nin-DU-daP">
+                                <rect key="frame" x="118" y="74" width="178" height="96"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on a button below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8at-bk-CjB">
+                                <rect key="frame" x="117.5" y="195" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="nin-DU-daP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="26w-K0-Ldi"/>
+                            <constraint firstItem="8at-bk-CjB" firstAttribute="top" secondItem="nin-DU-daP" secondAttribute="bottom" constant="25" id="EHo-j0-dkK"/>
+                            <constraint firstItem="3uK-dp-VWz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HPK-NO-7ia"/>
+                            <constraint firstItem="wiN-vh-w5T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mlx-Cy-V70"/>
+                            <constraint firstItem="3uK-dp-VWz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SHB-Yp-V4e"/>
+                            <constraint firstItem="eM8-4n-rGY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V1g-gf-31c"/>
+                            <constraint firstItem="A50-MO-W1T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wzf-aN-deW"/>
+                            <constraint firstItem="ppm-YJ-5Dk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dVI-Kv-Qet"/>
+                            <constraint firstItem="ppm-YJ-5Dk" firstAttribute="top" secondItem="3uK-dp-VWz" secondAttribute="bottom" constant="30" id="gKc-ap-AjP"/>
+                            <constraint firstAttribute="bottom" secondItem="A50-MO-W1T" secondAttribute="bottom" constant="30" id="hwd-be-INy"/>
+                            <constraint firstItem="8at-bk-CjB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mqE-YT-eUA"/>
+                            <constraint firstItem="nin-DU-daP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nSV-lX-MuN"/>
+                            <constraint firstItem="wiN-vh-w5T" firstAttribute="top" secondItem="ppm-YJ-5Dk" secondAttribute="bottom" constant="30" id="phE-tj-Who"/>
+                            <constraint firstItem="3uK-dp-VWz" firstAttribute="top" secondItem="eM8-4n-rGY" secondAttribute="bottom" constant="30" id="qK2-wy-par"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="msgLabel" destination="8at-bk-CjB" id="d5Z-9o-TDE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pushbtn" width="640" height="512"/>
+    </resources>
 </document>
