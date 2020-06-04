@@ -28,20 +28,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-6A-4fh">
-                                <rect key="frame" x="93.5" y="778" width="227" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-6A-4fh">
+                                <rect key="frame" x="38.5" y="760" width="337" height="52"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-pw-n1d">
-                                        <rect key="frame" x="0.0" y="0.0" width="33" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="52"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
                                         <state key="normal" title="Lap"/>
                                         <connections>
                                             <action selector="lapBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mN4-pU-f25"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-5x-9LC">
-                                        <rect key="frame" x="183" y="0.0" width="44" height="34"/>
+                                        <rect key="frame" x="193" y="0.0" width="144" height="52"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="50" minY="15" maxX="50" maxY="15"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
