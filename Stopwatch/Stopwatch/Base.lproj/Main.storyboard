@@ -23,8 +23,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w1-ed-vpG">
-                                <rect key="frame" x="44" y="413.5" width="360" height="69.5"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
+                                <rect key="frame" x="55" y="425" width="304" height="46"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="46"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,11 +54,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="5w1-ed-vpG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ejl-sC-Vva"/>
                             <constraint firstItem="5w1-ed-vpG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LV1-vl-opG"/>
                             <constraint firstItem="bjj-6A-4fh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZQb-nW-A7S"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5w1-ed-vpG" secondAttribute="trailing" constant="10" id="eVd-uc-I4P"/>
                             <constraint firstItem="kzn-0l-Jud" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gb9-oc-eNm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bjj-6A-4fh" secondAttribute="bottom" constant="50" id="hRc-RQ-jam"/>
+                            <constraint firstItem="5w1-ed-vpG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kWM-mq-Ahq"/>
                             <constraint firstItem="kzn-0l-Jud" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="oOi-KW-KbI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
