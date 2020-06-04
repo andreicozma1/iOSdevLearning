@@ -33,7 +33,9 @@ class ViewController: UIViewController {
         if(isRunning){
             print("true")
             sender.setTitle("Pause", for: [])
+            sender.setTitleColor(UIColor.orange, for: .normal)
             lapBtn.setTitle("Lap", for: [])
+            lapBtn.setTitleColor(UIColor.blue, for: .normal)
             lapBtn.isEnabled = true
             
 
@@ -45,7 +47,9 @@ class ViewController: UIViewController {
             print("false")
             timer.invalidate()
             sender.setTitle("Resume", for: [])
+            sender.setTitleColor(UIColor.green, for: .normal)
             lapBtn.setTitle("Reset", for: [])
+            lapBtn.setTitleColor(UIColor.red, for: .normal)
             lapBtn.isEnabled = true
         }
        
@@ -55,7 +59,10 @@ class ViewController: UIViewController {
         if(!isRunning){
             lapBtn.isEnabled = false
             lapBtn.setTitle("Lap", for: [])
+            lapBtn.setTitleColor(UIColor.gray, for: .normal)
+            
             startBtn.setTitle("Start", for: [])
+            startBtn.setTitleColor(UIColor.green, for: .normal)
             currTime = 0.0
             self.timeLabel.text = String(self.timeToString(  t: self.currTime))
             

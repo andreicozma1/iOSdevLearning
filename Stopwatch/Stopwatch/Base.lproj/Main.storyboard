@@ -42,7 +42,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-5x-9LC">
                                         <rect key="frame" x="183" y="0.0" width="44" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
-                                        <state key="normal" title="Start"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="startBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eza-p1-4J0"/>
                                         </connections>
