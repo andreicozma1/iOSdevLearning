@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var lapBtn: UIButton!
+    @IBOutlet var startBtn: UIButton!
+    
     @IBOutlet var timeLabel: UILabel!
+    
     var timer = Timer()
     var isRunning = false
     
@@ -19,6 +23,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    var currTime:Double = 0.00
+    
     @IBAction func startBtnClick(_ sender: UIButton) {
         print("Clicked Start: isRunning = ", terminator:" ")
         
@@ -26,24 +32,34 @@ class ViewController: UIViewController {
         
         if(isRunning){
             print("true")
-            sender.setTitle("Stop", for: [])
+            sender.setTitle("Pause", for: [])
+            lapBtn.setTitle("Lap", for: [])
+            lapBtn.isEnabled = true
             
-            var currTime:Double = 0.00
+
             timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(block) in
-                currTime += 0.01
-                self.timeLabel.text = String(self.timeToString(  t: currTime))
-                print(currTime)
+                self.currTime += 0.01
+                self.timeLabel.text = String(self.timeToString(  t: self.currTime))
             })
         }else{
             print("false")
             timer.invalidate()
-            sender.setTitle("Start", for: [])
+            sender.setTitle("Resume", for: [])
+            lapBtn.setTitle("Reset", for: [])
+            lapBtn.isEnabled = true
         }
        
     }
     
     @IBAction func lapBtnClick(_ sender: Any) {
-        print("Clicked Lap")
+        if(!isRunning){
+            lapBtn.isEnabled = false
+            lapBtn.setTitle("Lap", for: [])
+            startBtn.setTitle("Start", for: [])
+            currTime = 0.0
+            self.timeLabel.text = String(self.timeToString(  t: self.currTime))
+            
+        }
     }
     
     

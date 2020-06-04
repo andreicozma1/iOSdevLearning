@@ -31,7 +31,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-6A-4fh">
                                 <rect key="frame" x="93.5" y="778" width="227" height="34"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-pw-n1d">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dds-pw-n1d">
                                         <rect key="frame" x="0.0" y="0.0" width="33" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <state key="normal" title="Lap"/>
@@ -62,6 +62,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="lapBtn" destination="dds-pw-n1d" id="9bv-nd-SBV"/>
+                        <outlet property="startBtn" destination="hTe-5x-9LC" id="vnZ-pm-3ud"/>
                         <outlet property="timeLabel" destination="5w1-ed-vpG" id="UCZ-Ej-LOr"/>
                     </connections>
                 </viewController>
