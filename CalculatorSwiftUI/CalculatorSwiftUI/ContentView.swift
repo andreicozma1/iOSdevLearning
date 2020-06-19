@@ -21,6 +21,12 @@ struct ContentView: View {
             
             Button(action:{
                 print("Clicked result view: " + self.display_t)
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                let str: String = formatter.string(for: Double(self.display_t))!
+                if(str.count < 13){
+                    self.display_t = str
+                }
             }){
                 Text(self.display_t).font(Font.system(size: 40))
                 .multilineTextAlignment(.trailing)
@@ -96,9 +102,11 @@ struct ContentView: View {
            
             switch(text){
                 case "/", "*", "-","+", "%":
-                 
-                    if(self.cleared && self.left != nil){
+                    print("\(self.cleared) and \(self.left)")
+                    if(self.cleared && self.left != nil && self.prev_state != ""){
                         let num = Double(self.display_t)
+                        
+                        print("Performing: \(self.left) \(self.prev_state) \(num)")
                         switch(self.prev_state){
                         case "/":
                             self.left! /= num!
@@ -126,6 +134,7 @@ struct ContentView: View {
                         }
                         self.cleared = false
                     } else{
+                        print("NOT recalculating")
                         self.left = Double(self.display_t) ?? 0
                         if(self.left == 0){
                             self.cleared = true
@@ -135,10 +144,12 @@ struct ContentView: View {
                 
                     break
                 case "=":
-                    print("\(self.cleared)")
-                    if(self.cleared && self.left != nil){
-                        print("\(self.left) and \(self.display_t) and \(self.prev_state)")
+                    print("cleared = \(self.cleared) and left = \(self.left) and prev_state = \(self.prev_state)")
+                    if(self.cleared && self.left != nil && self.prev_state != ""){
+                        print("Should calculate")
                         let num = Double(self.display_t)
+                        
+                        print("Performing: \(self.left) \(self.prev_state) \(num)")
                         switch(self.prev_state){
                         case "/":
                             self.left! /= num!
@@ -147,6 +158,7 @@ struct ContentView: View {
                             self.left! *= num!
                             break
                         case "-":
+                            print("HERE")
                             self.left! -= num!
                             break
                         case "+":
@@ -161,8 +173,16 @@ struct ContentView: View {
                         default:
                             break
                         }
+                        
                         if(!self.display_t.contains(".") || self.prev_state != "%"){
-                            self.display_t = String(format:"%.8f", self.left!)
+                            if(String(self.left!).count >= 13){
+                                let formatter = NumberFormatter()
+                                formatter.numberStyle = .scientific
+                                self.display_t = formatter.string(for: self.left!)!
+                            } else {
+                                self.display_t = String(self.left!)
+                            }
+                            
                         }
                         self.prev_state = "="
                         self.cleared = false
@@ -190,6 +210,11 @@ struct ContentView: View {
                 case "?":
                     break
                 case ".":
+                    if(self.prev_state != ""){
+                        print("Clearing")
+                        self.display_t = "0"
+                        self.cleared = true
+                    }
                     if(!self.display_t.contains(".")){
                         self.display_t += text
                     }
